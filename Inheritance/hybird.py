@@ -1,7 +1,9 @@
 class University:
-    univName= "pondy university"
+    def __init__(self, univName):
+        self.univName = univName
+
     def getUniversityDetails1(self):
-        print("univName", self.univerName)
+        print("univName", self.univName)
 
 class Course(University):
     courseName = "CSE"
@@ -14,12 +16,13 @@ class Batch(Course):
         print("batchName", self.batchName)
 
 class Department(Course, University):
-    departmentName = "Computer Science"
+    def __init__(self, univName):
+        self.departmentName = "Computer Science"
+
     def getUniversityDetails4(self):
         print("departmentName", self.departmentName)
 
 obj = Department()
-obj1 = Batch()
 
 # obj.getUniversityDetails()
 obj.getUniversityDetails4()
